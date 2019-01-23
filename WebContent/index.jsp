@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Welcome to the world of DevOps</h1>
-	<p>Page is deployed for "Change2"</p>
+	<p>Application version : v1</p>
 </body>
 </html>
