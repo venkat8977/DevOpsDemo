@@ -2,3 +2,5 @@
 .git
 .settings
 target
+.project
+.classpath
