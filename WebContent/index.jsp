@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>DevOpsDemo</title>
 </head>
-<body>
+<body style="text-align: center;">
 	<h1>Welcome to the world of DevOps</h1>
 	<h4>Application version : v02</h4>
 </body>
