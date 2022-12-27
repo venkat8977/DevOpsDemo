@@ -57,7 +57,7 @@ pipeline {
       steps{
 	sshagent(['tomcat-new']) {
 	  sh """
-	    wget --user=admin --password=nexus http://65.0.96.244:8081/repository/maven-snapshots/DevOpsDemo%2FDevOpsDemo%2F1.0-SNAPSHOT%2FDevOpsDemo-1.0-20221221.140510-3.war
+	    wget --user=admin --password=admin http://65.0.96.244:8081/repository/maven-snapshots/DevOpsDemo%2FDevOpsDemo%2F1.0-SNAPSHOT%2FDevOpsDemo-1.0-20221221.140510-3.war
 	    mv DevOpsDemo%2FDevOpsDemo%2F1.0-SNAPSHOT%2FDevOpsDemo-1.0-20221221.140510-3.war DevOpsDemo.war
 	    scp -o StrictHostKeyChecking=no DevOpsDemo.war ubuntu@172.31.6.47:/home/ubuntu
 	    ssh -o StrictHostKeyChecking=no ubuntu@172.31.6.47 'sudo cp -r /home/ubuntu/DevOpsDemo.war /opt/tomcat/webapps/'                   
