@@ -31,7 +31,7 @@ pipeline {
  		type: 'war']], 
  		credentialsId: 'nexus', 
  		groupId: 'DevOpsDemo', 
- 		nexusUrl: '65.0.96.244:8081/', 
+ 		nexusUrl: 'http://65.0.96.244:8081/', 
  		nexusVersion: 'nexus3', 
  		protocol: 'http', 
  		repository: 'maven-snapshots', 
