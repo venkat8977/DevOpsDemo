@@ -31,7 +31,7 @@ pipeline {
  		type: 'war']], 
  		credentialsId: 'nexus', 
  		groupId: 'DevOpsDemo', 
- 		nexusUrl: 'http://65.0.96.244:8081/', 
+ 		nexusUrl: '65.0.96.244:8081/', 
  		nexusVersion: 'nexus3', 
  		protocol: 'http', 
  		repository: 'maven-snapshots', 
@@ -42,6 +42,14 @@ pipeline {
        steps {
  	timeout(time: 1, unit: 'HOURS') {
            waitForQualityGate abortPipeline: true
+ 	}
+       }
+       post {
+ 	success {
+ 	  slackSend message:"Build succeeded with Quality Gate success  - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+ 	}
+ 	failure {
+ 	  slackSend message:"Build failed due to Quality Gate failure  - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
  	}
        }
      }
@@ -59,6 +67,14 @@ pipeline {
 	}            
       }
     }
+  }
+  post {
+    success {
+      slackSend channel: '#jenkins_alert', message: 'welocme to slack !', teamDomain: 'jenkins', tokenCredentialId: 'slack_credentials'
+    } 
+    failure {
+      slackSend channel: '#jenkins_alert', message: 'welocme to slack !', teamDomain: 'jenkins', tokenCredentialId: 'slack_credentials'
+    }	
   }
 }
 
