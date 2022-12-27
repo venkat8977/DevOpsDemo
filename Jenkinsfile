@@ -69,8 +69,8 @@ pipeline {
     }
   }
   post {
-    success {
-      slackSend channel: '#jenkins_alert', message: 'welocme to slack !', teamDomain: 'jenkins', tokenCredentialId: 'slack_credentials'
+   success {
+   slackSend channel: '#jenkins_alert', message: 'welocme to slack !', teamDomain: 'jenkins', tokenCredentialId: 'slack_credentials'
     } 
     failure {
       slackSend channel: '#jenkins_alert', message: 'welocme to slack !', teamDomain: 'jenkins', tokenCredentialId: 'slack_credentials'
